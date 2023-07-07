@@ -12,7 +12,7 @@ public class Employee
 ...
 }
 ```
- 3) Whenever you make changes (Delete, Insert, Update) to `[ChangeTrackable]` marked entities, use `SaveChanges(string username, string ipAddress)` instead of SaveChanges() or it will throw Exception:
+ 3) Whenever you make changes (Delete, Insert, Update) to `[ChangeTrackable]` marked entities, use `SaveChanges(string username, string ipAddress)` instead of `SaveChanges()` or it will throw Exception:
 ```
 using(var db = new LocalDB())
 {
