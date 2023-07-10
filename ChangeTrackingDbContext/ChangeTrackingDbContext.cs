@@ -30,7 +30,7 @@ namespace ChangeTrackingDbContext
         }
 
         private bool firstTime = true;
-        public int SaveChanges(string username, string ipAddress)
+        public int SaveChanges(string userId, string ipAddress)
         {
             if (firstTime)
             {
@@ -70,7 +70,7 @@ namespace ChangeTrackingDbContext
                 var insertTrack = new ChangeTrack()
                 {
                     TableName = GetTableName(entity.Entity),
-                    Username = username,
+                    UserId = userId,
                     IpAddress = ipAddress,
                     ChangeDate = DateTime.Now,
                     Operation = (entity.State == EntityState.Added) ? OperationType.Insert :
@@ -93,7 +93,7 @@ namespace ChangeTrackingDbContext
             CREATE TABLE [dbo].[ChangeTrack](
                 [Id] [int] IDENTITY(1,1) NOT NULL,
                 [table_name] [nvarchar](255) NOT NULL,
-                [username] [nvarchar](255) NOT NULL,
+                [user_id] [nvarchar](255) NOT NULL,
                 [ipaddress] [nvarchar](255) NOT NULL,
                 [change_date] [datetime] NOT NULL,
                 [operation] [int] NOT NULL,

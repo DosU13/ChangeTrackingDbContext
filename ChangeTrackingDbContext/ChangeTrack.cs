@@ -15,8 +15,8 @@ namespace ChangeTrackingDbContext
         public int Id { get; set; }
         [Column("table_name")]
         public string TableName { get; set; }
-        [Column("username")]
-        public string Username { get; set; }
+        [Column("user_id")]
+        public string UserId { get; set; }
         [Column("ipaddress")]
         public string IpAddress { get; set; }
         [Column("operation")]
